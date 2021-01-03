@@ -11,17 +11,6 @@ tape('API endpoint tests', function (t) {
     t.equal(response.text, 'Welcome to express')
   })
 
-  tape('GET /user route should return user data', async function (t) {
-    const { statusCode, body } = await request(server).get('/user')
-    const expectedUser = {
-      name: 'Umair ahmed',
-      age: 22,
-      profession: 'Software Engineer | Fullstack Dev'
-    }
-
-    t.equal(statusCode, 200)
-    t.deepEqual(body, expectedUser, 'should return the expected user')
-  })
   t.end()
 })
 
